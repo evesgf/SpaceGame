@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GPL
 {
@@ -8,6 +9,14 @@ namespace GPL
     {
         public FireBase[] fires;
         public FireBase nowFire;
+        public Text text;
+
+        private int fireFlag;
+
+        private void Start()
+        {
+            ShowTurret();
+        }
 
         // Update is called once per frame
         void Update()
@@ -16,6 +25,31 @@ namespace GPL
             {
                 nowFire.OnFire();
             }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                fireFlag = fireFlag - 1 >= 0 ? fireFlag - 1: fires.Length-1;
+                ShowTurret();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                fireFlag = fireFlag + 1 < fires.Length ? fireFlag + 1:0;
+                ShowTurret();
+            }
+        }
+
+        void ShowTurret()
+        {
+            foreach (var f in fires)
+            {
+                f.enabled = false;
+                f.gameObject.SetActive(false);
+            }
+            nowFire = fires[fireFlag];
+            nowFire.enabled = true;
+            nowFire.gameObject.SetActive(true);
+            text.text = nowFire.name;
         }
     }
 }

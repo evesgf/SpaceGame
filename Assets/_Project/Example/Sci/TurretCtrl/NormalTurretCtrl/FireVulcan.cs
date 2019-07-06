@@ -31,15 +31,15 @@ namespace GPL
 
         private void Start()
         {
-            PoolManager.Instance.CreatePool(POOLNAME_BULLET,bullet.GetComponent<PoolObject>(), 60, 20f, 20f);
+            PoolManager.Instance.CreatePool(POOLNAME_BULLET,bullet.GetComponent<PoolObject>(), 0, 20f, 20f);
 
-            PoolManager.Instance.CreatePool(POOLNAME_MUZZLEFIRE, muzzleFire.GetComponent<PoolObject>(), 10, 20f, 20f);
+            PoolManager.Instance.CreatePool(POOLNAME_MUZZLEFIRE, muzzleFire.GetComponent<PoolObject>(), 0, 20f, 20f);
 
-            PoolManager.Instance.CreatePool(POOLNAME_BULLETBOOM, bulletBoom.GetComponent<PoolObject>(), 60, 20f, 20f);
+            PoolManager.Instance.CreatePool(POOLNAME_BULLETBOOM, bulletBoom.GetComponent<PoolObject>(), 0, 20f, 20f);
 
-            PoolManager.Instance.CreatePool(POOLNAME_BULLETAUDIO, fireAudio.GetComponent<PoolObject>(), 60, 20f, 20f);
+            PoolManager.Instance.CreatePool(POOLNAME_BULLETAUDIO, fireAudio.GetComponent<PoolObject>(), 0, 20f, 20f);
 
-            PoolManager.Instance.CreatePool(POOLNAME_BOOMAUDIO, boomAudio.GetComponent<PoolObject>(), 10, 20f, 20f);
+            PoolManager.Instance.CreatePool(POOLNAME_BOOMAUDIO, boomAudio.GetComponent<PoolObject>(), 0, 20f, 20f);
         }
 
         public override void OnFire()
