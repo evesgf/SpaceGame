@@ -1766,14 +1766,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleTurretCtrl
       objectReference: {fileID: 0}
-    - target: {fileID: 1529829714, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
-      propertyPath: realTargetIcon
-      value: 
-      objectReference: {fileID: 1394144958}
-    - target: {fileID: 1529829714, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
-      propertyPath: txtAngle
-      value: 
-      objectReference: {fileID: 1818326844}
     - target: {fileID: 3988224829626603981, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1829,6 +1821,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1529829714, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
+      propertyPath: realTargetIcon
+      value: 
+      objectReference: {fileID: 1394144958}
+    - target: {fileID: 1529829714, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
+      propertyPath: txtAngle
+      value: 
+      objectReference: {fileID: 1818326844}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
 --- !u!114 &8011327492583905952 stripped
