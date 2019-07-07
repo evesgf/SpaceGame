@@ -26,7 +26,7 @@ namespace GPL
             poolObject = GetComponent<PoolObject>();
         }
 
-        public override void Init()
+        public override void OnStart()
         {
             nowLifeTime = 0;
         }

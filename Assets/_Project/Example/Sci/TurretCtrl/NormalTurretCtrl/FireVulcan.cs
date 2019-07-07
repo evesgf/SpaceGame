@@ -52,7 +52,7 @@ namespace GPL
 
             //生成子弹
             PoolManager.Instance.GetPool(POOLNAME_BULLET).Spawn((PoolObject po)=>{
-                po.GetComponent<BulletBase>().Init();
+                po.GetComponent<BulletBase>().OnStart();
                 po.transform.position = muzzlePos.position;
                 po.transform.rotation = muzzlePos.rotation;
             });

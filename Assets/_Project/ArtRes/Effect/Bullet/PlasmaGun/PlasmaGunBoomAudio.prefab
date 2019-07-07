@@ -141,4 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolName: 
-  desSpawnDelay: 0.1
+  desSpawnDelay: 1.2

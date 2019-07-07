@@ -52,7 +52,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  lifeTime: 25
+  lifeTime: 10
   flySpeed: 20
 --- !u!114 &7100262841198240060
 MonoBehaviour:
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a19912c0669ab40862bfd69e4cd133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RandomScale: 1
+  RandomScale: 0
   RandomRotation: 1
   MinScale: 1
   MaxScale: 2
@@ -360,13 +360,9 @@ PrefabInstance:
       propertyPath: m_MaxParticleSize
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.8172
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
+    - target: {fileID: 19800004, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.7264
+      value: 5.5842
       objectReference: {fileID: 0}
     - target: {fileID: 19800002, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
       propertyPath: InitialModule.startSize.minScalar
@@ -376,9 +372,13 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.6583
       objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
+    - target: {fileID: 19800000, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.8172
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 5.5842
+      value: 0.7264
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b2dcd1db87e3c04fb20ef9bf975fdd4, type: 3}

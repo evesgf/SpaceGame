@@ -30,9 +30,10 @@ namespace GPL
             sphereCollider.enabled = false;
         }
 
-        public override void Init()
+        public override void OnStart()
         {
             nowLifeTime = 0;
+
         }
 
         private void OnFly(float time)
@@ -40,7 +41,7 @@ namespace GPL
             //生命周期检测
             if (nowLifeTime >= lifeTime)
             {
-                OnDesSpawn();
+                OnDesSpawn(transform.position);
             }
 
             //飞行位置改变
@@ -48,7 +49,7 @@ namespace GPL
             //碰撞检测
             if (Physics.SphereCast(oldPos+ sphereCollider.center, sphereCollider.radius, transform.forward,out hit, flySpeed * time, layerMask))
             {
-                OnDesSpawn();
+                OnDesSpawn(hit.point);
             }
 
             oldPos = transform.position;
@@ -58,18 +59,19 @@ namespace GPL
         /// <summary>
         /// 当碰撞或被回收时执行爆炸
         /// </summary>
-        private void OnDesSpawn()
+        /// <param name="boomPos"></param>
+        private void OnDesSpawn(Vector3 boomPos)
         {
             //TODO:计算伤害
 
             //生成碰撞特效
             PoolManager.Instance.GetPool(POOLNAME_BULLETBOOM).Spawn((PoolObject po) => {
-                po.transform.position = hit.point;
+                po.transform.position = boomPos;
                 po.OnDesSpawned();
             });
             //生成碰撞音效
             PoolManager.Instance.GetPool(POOLNAME_BOOMAUDIO).Spawn((PoolObject po) => {
-                po.transform.position = hit.point;
+                po.transform.position = boomPos;
                 po.OnDesSpawned();
             });
 

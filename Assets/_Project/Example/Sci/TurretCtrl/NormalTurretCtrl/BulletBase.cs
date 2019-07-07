@@ -6,9 +6,8 @@ namespace GPL
 {
     public abstract class BulletBase : MonoBehaviour
     {
-        public virtual void Init()
-        {
+        public virtual void OnStart() { }
 
-        }
+        public virtual void OnEnd() { }
     }
 }
