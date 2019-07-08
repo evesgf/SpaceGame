@@ -78,12 +78,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   debugShow: 1
+  isLockRotate: 0
   swivel: {fileID: 1224976502204233550}
   swivelRotateSpeed: 50
   HeadingLimit: {x: -45, y: 45}
   barrel: {fileID: 7932080353376007546}
   barrelRotateSpeed: 50
-  ElevationLimit: {x: -45, y: 45}
+  ElevationLimit: {x: -10, y: 10}
   muzzle: {fileID: 4717056564074505825}
 --- !u!114 &6704785539489599262
 MonoBehaviour:
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realTargetIcon: {fileID: 0}
   txtAngle: {fileID: 0}
+  pointLine: {fileID: 0}
 --- !u!1 &5675867354743498264
 GameObject:
   m_ObjectHideFlags: 0

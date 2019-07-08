@@ -54,6 +54,8 @@ namespace GPL
                 po.transform.position = flare.position;
                 po.OnDesSpawned();
             });
+
+            fireLightningGun.OnEndFire();
         }
 
 
@@ -61,7 +63,7 @@ namespace GPL
         {
             if (nowLifeTime >= lifeTime)
             {
-                fireLightningGun.EndFire();
+                OnEnd();
             }
 
             flare.position += flare.forward * flySpeed * time;
@@ -72,7 +74,7 @@ namespace GPL
                 //TODO:计算伤害
 
                 //EndFire
-                fireLightningGun.EndFire();
+                OnEnd();
             }
 
             //计算lineRenderers长度

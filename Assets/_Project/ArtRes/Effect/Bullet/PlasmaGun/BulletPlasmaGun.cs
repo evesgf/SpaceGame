@@ -33,7 +33,6 @@ namespace GPL
         public override void OnStart()
         {
             nowLifeTime = 0;
-
         }
 
         private void OnFly(float time)
