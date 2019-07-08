@@ -18,8 +18,12 @@ namespace GPL
 
         internal bool isFire = false;
 
+        private NormalTurretCtrl normalTurretCtrl;
+
         private void Start()
         {
+            normalTurretCtrl = GetComponent<NormalTurretCtrl>();
+
             bullet.gameObject.SetActive(false);
 
             PoolManager.Instance.CreatePool(POOLNAME_FIREAUDIO, fireAudio.GetComponent<PoolObject>(), 0, 20f, 20f);
@@ -33,6 +37,8 @@ namespace GPL
 
         public override void StartFire()
         {
+            base.EndFire();
+
             if (isFire) return;
             bullet.OnStart();
 
@@ -43,15 +49,18 @@ namespace GPL
             });
 
             isFire = true;
+            normalTurretCtrl.isLockRotate = true;
         }
 
         public override void EndFire()
         {
-            if (!isFire) return;
+            base.EndFire();
+        }
 
-            bullet.OnEnd();
-
+        public void OnEndFire()
+        {
             isFire = false;
+            normalTurretCtrl.isLockRotate = false;
         }
     }
 }

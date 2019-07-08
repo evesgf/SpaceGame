@@ -6,8 +6,10 @@ namespace GPL
 {
     public class NormalTurretCtrl : MonoBehaviour
     {
-        public LayerMask targetLayer;               //目标层
-        public bool debugShow = false;              //调试模式
+        public LayerMask targetLayer;           //目标层
+        public bool debugShow = false;          //显示调试
+
+        public bool isLockRotate;               //是否锁定旋转
 
         public Transform swivel;                //水平旋转根节点
         public float swivelRotateSpeed;         //水平转速
@@ -22,6 +24,20 @@ namespace GPL
         internal Vector3 target;
 
         private bool fullAccess = false;
+        private RaycastHit hit;
+        private Vector3 realTargetPos;
+
+        private bool isMaxRight, isMaxLeft;
+        private bool isMaxUp, isMaxDown;
+
+        /// <summary>
+        /// 返回炮口真实指向
+        /// </summary>
+        /// <returns></returns>
+        public Vector3 RealTargetPos
+        {
+            get { return realTargetPos; }
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -33,7 +49,10 @@ namespace GPL
         // Update is called once per frame
         void Update()
         {
-            Rotate(target);
+            if(!isLockRotate) Rotate(target);
+
+            //检测炮管真实指向位置
+            realTargetPos=Physics.Raycast(muzzle.position, muzzle.forward, out hit, Camera.main.farClipPlane)?realTargetPos = hit.point:realTargetPos = muzzle.forward*Camera.main.farClipPlane;
         }
 
         /// <summary>
@@ -53,11 +72,18 @@ namespace GPL
             if (barrel.transform.localEulerAngles.x >= 180f && barrel.transform.localEulerAngles.x < (360f - ElevationLimit.y))
             {
                 barrel.transform.localEulerAngles = new Vector3(360f - ElevationLimit.y, 0f, 0f);
+                isMaxUp = true;
             }
             //down
             else if (barrel.transform.localEulerAngles.x < 180f && barrel.transform.localEulerAngles.x > -ElevationLimit.x)
             {
                 barrel.transform.localEulerAngles = new Vector3(-ElevationLimit.x, 0f, 0f);
+                isMaxDown = true;
+            }
+            else
+            {
+                isMaxUp = false;
+                isMaxDown = false;
             }
 
             //通过LookRotation找出炮塔水平旋转的角度
@@ -75,12 +101,18 @@ namespace GPL
                 if (swivel.transform.localEulerAngles.y >= 180f && swivel.transform.localEulerAngles.y < (360f - HeadingLimit.y))
                 {
                     swivel.transform.localEulerAngles = new Vector3(0f, 360f - HeadingLimit.y, 0f);
+                    isMaxLeft = true;
                 }
-
                 //right
                 else if (swivel.transform.localEulerAngles.y < 180f && swivel.transform.localEulerAngles.y > -HeadingLimit.x)
                 {
                     swivel.transform.localEulerAngles = new Vector3(0f, -HeadingLimit.x, 0f);
+                    isMaxRight = true;
+                }
+                else
+                {
+                    isMaxLeft = false;
+                    isMaxRight = false;
                 }
             }
         }
@@ -92,15 +124,6 @@ namespace GPL
         public float GetAngleToTarget()
         {
             return Vector3.Angle(barrel.forward, target - barrel.position);
-        }
-
-        /// <summary>
-        /// 返回枪口指向在屏幕的坐标
-        /// </summary>
-        /// <returns></returns>
-        public Vector3 GetTargetDistance()
-        {
-            return Camera.main.WorldToScreenPoint(muzzle.position + muzzle.forward * Vector3.Distance(barrel.position, target));
         }
 
         private void OnDrawGizmos()
