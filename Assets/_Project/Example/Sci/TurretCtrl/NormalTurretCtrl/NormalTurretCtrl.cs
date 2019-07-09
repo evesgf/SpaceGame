@@ -13,11 +13,11 @@ namespace GPL
 
         public Transform swivel;                //水平旋转根节点
         public float swivelRotateSpeed;         //水平转速
-        public Vector2 HeadingLimit;
+        public Vector2 HeadingLimit;            //旋转角度限制
 
         public Transform barrel;                //垂直旋转根节点
         public float barrelRotateSpeed;         //垂直转速
-        public Vector2 ElevationLimit;
+        public Vector2 ElevationLimit;          //旋转角度限制
 
         public Transform muzzle;                //枪口位置
 
@@ -64,7 +64,7 @@ namespace GPL
             //通过LookRotation找出枪管垂直旋转角度
             Vector3 targetVel = target - muzzle.position;
             Quaternion targetRotationX = Quaternion.LookRotation(targetVel);
-            barrel.rotation = Quaternion.RotateTowards(barrel.rotation, targetRotationX, swivelRotateSpeed * Time.deltaTime);
+            barrel.rotation = Quaternion.RotateTowards(barrel.rotation, targetRotationX, barrelRotateSpeed * Time.deltaTime);
             //剔除其余角度旋转
             barrel.localEulerAngles = new Vector3(barrel.localEulerAngles.x, 0f, 0f);
 
@@ -90,7 +90,7 @@ namespace GPL
             Vector3 targetY = target;
             targetY.y = barrel.position.y;
             Quaternion targetRotationY = Quaternion.LookRotation(targetY - swivel.position);
-            swivel.rotation = Quaternion.RotateTowards(swivel.rotation, targetRotationY, barrelRotateSpeed * Time.deltaTime);
+            swivel.rotation = Quaternion.RotateTowards(swivel.rotation, targetRotationY, swivelRotateSpeed * Time.deltaTime);
             //剔除其余角度旋转
             swivel.localEulerAngles = new Vector3(0f, swivel.localEulerAngles.y, 0f);
 

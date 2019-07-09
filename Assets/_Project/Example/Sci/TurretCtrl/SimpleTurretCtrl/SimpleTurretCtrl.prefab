@@ -40,8 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3988224829626603981}
   - component: {fileID: 8011327492583905952}
-  - component: {fileID: 1529829714}
   - component: {fileID: 1381096405}
+  - component: {fileID: 811334337401838334}
   m_Layer: 2
   m_Name: SimpleTurretCtrl
   m_TagString: Untagged
@@ -79,23 +79,11 @@ MonoBehaviour:
   debugShow: 1
   swivel: {fileID: 6765197031714914569}
   swivelRotateSpeed: 50
+  swivelRotateLimit: {x: -10, y: 10}
   barrel: {fileID: 7483517663091766006}
   barrelRotateSpeed: 50
+  barrelRotateLimit: {x: -10, y: 10}
   muzzle: {fileID: 9111024449624764381}
---- !u!114 &1529829714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3881224211461118700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f99fd319be5a049a2afb29c9706c82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  realTargetIcon: {fileID: 0}
-  txtAngle: {fileID: 0}
 --- !u!114 &1381096405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +104,21 @@ MonoBehaviour:
   Muzzles:
   - {fileID: 6862872153821953753}
   - {fileID: 8692530837127460742}
+--- !u!114 &811334337401838334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881224211461118700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f99fd319be5a049a2afb29c9706c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realTargetIcon: {fileID: 0}
+  txtAngle: {fileID: 0}
+  pointLine: {fileID: 0}
 --- !u!1 &6870657443028830580
 GameObject:
   m_ObjectHideFlags: 0

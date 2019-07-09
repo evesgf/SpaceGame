@@ -2103,6 +2103,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalTurretCtrl_Vulcan
       objectReference: {fileID: 0}
+    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
+        type: 3}
+      propertyPath: ElevationLimit.x
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
+        type: 3}
+      propertyPath: ElevationLimit.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
+        type: 3}
+      propertyPath: HeadingLimit.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
+        type: 3}
+      propertyPath: HeadingLimit.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2089529603618612961, guid: d155bee62320d2547b4dd907e9b6cd28,
         type: 3}
       propertyPath: m_LocalPosition.x

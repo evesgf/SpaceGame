@@ -14,23 +14,12 @@ namespace GPL
         public SimpleTurretCtrl[] turrets;
 
         private Vector3 targetPos;
+        private RaycastHit hit;
 
         // Start is called before the first frame update
         void Start()
         {
-            if (target != null)
-            {
-                targetPos = target.position;
-            }
-            else
-            {
-                targetPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.farClipPlane));
-            }
-
-            foreach (var turret in turrets)
-            {
-                turret.target = targetPos;
-            }
+            
         }
 
         // Update is called once per frame
