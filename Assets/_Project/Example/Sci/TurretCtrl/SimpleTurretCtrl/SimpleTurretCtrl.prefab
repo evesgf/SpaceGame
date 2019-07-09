@@ -79,7 +79,7 @@ MonoBehaviour:
   debugShow: 1
   swivel: {fileID: 6765197031714914569}
   swivelRotateSpeed: 50
-  swivelRotateLimit: {x: -10, y: 10}
+  swivelRotateLimit: {x: -45, y: 45}
   barrel: {fileID: 7483517663091766006}
   barrelRotateSpeed: 50
   barrelRotateLimit: {x: -10, y: 10}

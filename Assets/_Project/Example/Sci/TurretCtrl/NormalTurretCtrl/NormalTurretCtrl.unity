@@ -517,14 +517,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1394144958}
-  m_RootOrder: 1
+  m_Father: {fileID: 766581642}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 8}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &665807303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,7 +621,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 665807302}
   m_Father: {fileID: 1351734343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1415,7 +1416,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1818326843}
-  - {fileID: 665807302}
   m_Father: {fileID: 1351734343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2103,25 +2103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalTurretCtrl_Vulcan
       objectReference: {fileID: 0}
-    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
+    - target: {fileID: 2196179487993488832, guid: d155bee62320d2547b4dd907e9b6cd28,
         type: 3}
-      propertyPath: ElevationLimit.x
-      value: -45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
-        type: 3}
-      propertyPath: ElevationLimit.y
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
-        type: 3}
-      propertyPath: HeadingLimit.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2194474671197046956, guid: d155bee62320d2547b4dd907e9b6cd28,
-        type: 3}
-      propertyPath: HeadingLimit.y
-      value: 90
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2089529603618612961, guid: d155bee62320d2547b4dd907e9b6cd28,
         type: 3}
@@ -2323,7 +2308,7 @@ PrefabInstance:
     - target: {fileID: 7326158855179646873, guid: cf15b55fc061f334caf3b733b407dda1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7434980264550397112, guid: cf15b55fc061f334caf3b733b407dda1,
         type: 3}

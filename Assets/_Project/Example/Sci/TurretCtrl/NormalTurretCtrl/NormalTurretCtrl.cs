@@ -25,19 +25,13 @@ namespace GPL
 
         private bool fullAccess = false;
         private RaycastHit hit;
-        private Vector3 realTargetPos;
-
         private bool isMaxRight, isMaxLeft;
         private bool isMaxUp, isMaxDown;
 
         /// <summary>
         /// 返回炮口真实指向
         /// </summary>
-        /// <returns></returns>
-        public Vector3 RealTargetPos
-        {
-            get { return realTargetPos; }
-        }
+        public Vector3 RealTargetPos { get; private set; }
 
         // Start is called before the first frame update
         void Start()
@@ -52,7 +46,7 @@ namespace GPL
             if(!isLockRotate) Rotate(target);
 
             //检测炮管真实指向位置
-            realTargetPos=Physics.Raycast(muzzle.position, muzzle.forward, out hit, Camera.main.farClipPlane)?realTargetPos = hit.point:realTargetPos = muzzle.forward*Camera.main.farClipPlane;
+            RealTargetPos=Physics.Raycast(muzzle.position, muzzle.forward, out hit, Camera.main.farClipPlane)?RealTargetPos = hit.point:RealTargetPos = muzzle.forward*Camera.main.farClipPlane;
         }
 
         /// <summary>
