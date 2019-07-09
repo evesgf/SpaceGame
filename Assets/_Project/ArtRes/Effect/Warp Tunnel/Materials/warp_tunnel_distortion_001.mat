@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: warp_tunnel_distortion_001
+  m_Shader: {fileID: 4800000, guid: 23c05bc35a2fdcf4ca744f323eb07014, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: b6f555dea6c55be4c827a78c969bdf42, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 499d5da8a7e43fe4c9545b6277a0d554, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Refraction:
+        m_Texture: {fileID: 2800000, guid: e3c112a4eaa71e8439ee8945c6545755, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _color:
+        m_Texture: {fileID: 2800000, guid: 499d5da8a7e43fe4c9545b6277a0d554, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Cutoff: 0.5
+    - _Dist: 24.8
+    - _InvFade: 3
+    - _MaxFadeEnd: 372.71
+    - _MaxFadeStart: 0
+    - _Offset: 0.52
+    - _Opacity: 0
+    - _RefractionFactor: 0.05
+    - _RefractionIntensity: 1
+    - _Shininess: 0.7
+    - _Speed: -15
+    - _U_TileAnimFactor: -0.09
+    - _V_TileAnimFactor: -0.88
+    - _Wiggle: 105.76
+    - _WiggleDist: 6.39
+    - _WiggleMult: 1
+    - _WiggleX: 0
+    - _WiggleY: 0
+    - _node_1054: 0.934
+    - _node_1054_copy: 3.99
+    - _node_5192: 0.786
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}

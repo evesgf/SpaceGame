@@ -39,7 +39,7 @@ namespace GPL
             if (avatar != null)
             {
                 //模拟Roll和Pitch旋转
-                avatar.localRotation = Quaternion.Lerp(avatar.localRotation, Quaternion.Euler(avatarUpAngle * -input.y *Mathf.Sign(nowForwardSpeed), 0, avatarRotateAngle * -input.x), avatarAngleStep * Time.deltaTime);
+                avatar.localRotation = Quaternion.Lerp(avatar.localRotation, Quaternion.Euler(avatarUpAngle * -input.y, 0, avatarRotateAngle * -input.x), avatarAngleStep * Time.deltaTime);
             }
         }
 

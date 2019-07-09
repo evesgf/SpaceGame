@@ -6,6 +6,8 @@ namespace GPL
 {
     public abstract class FireBase : MonoBehaviour
     {
+        public Transform target;
+
         public virtual void OnFire() { }
 
         public virtual void StartFire() { }

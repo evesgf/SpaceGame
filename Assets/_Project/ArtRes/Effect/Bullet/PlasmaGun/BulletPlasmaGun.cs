@@ -15,6 +15,9 @@ namespace GPL
 
         public float lifeTime = 5f;
         public float flySpeed = 100f;
+        public bool addExplosionForce;
+        public float explosionForceRadius =10f;
+        public float explosionForce=100f;
 
         private float nowLifeTime;
         private PoolObject poolObject;
@@ -48,6 +51,21 @@ namespace GPL
             //碰撞检测
             if (Physics.SphereCast(oldPos+ sphereCollider.center, sphereCollider.radius, transform.forward,out hit, flySpeed * time, layerMask))
             {
+                //添加爆炸力
+                if (addExplosionForce)
+                {
+                    Collider[] colliders = Physics.OverlapSphere(hit.point,explosionForceRadius,layerMask);
+                    foreach (Collider hits in colliders)
+                    {
+                        if (hits.GetComponent<Rigidbody>())
+                        {
+                            //给定爆炸力大小，爆炸点，爆炸半径
+                            //利用刚体组件添加爆炸力AddExplosionForce
+                            hits.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, hit.point, explosionForceRadius);
+                        }
+                    }
+                }
+
                 OnDesSpawn(hit.point);
             }
 

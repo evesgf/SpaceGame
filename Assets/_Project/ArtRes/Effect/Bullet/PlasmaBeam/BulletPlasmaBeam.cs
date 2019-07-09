@@ -60,7 +60,7 @@ namespace GPL
                 flare.position = hit.point;
                 flare.gameObject.SetActive(true);
 
-                //计算lineRenderers长度
+                //根据碰撞位置计算lineRenderers长度
                 nowRayLength = flare.localPosition.z;
 
                 //计算伤害间隔
@@ -68,23 +68,26 @@ namespace GPL
             }
             else
             {
+                //未命中时设置为最长射程
                 flare.position = muzzle.forward * maxRayLength;
                 flare.gameObject.SetActive(false);
-
                 nowRayLength = maxRayLength;
 
-                //归零间隔
+                //归零伤害计时间隔
                 nowHurtInterval = 0;
             }
+            nowLifeTime += time;
+        }
 
+        private void Update()
+        {
             foreach (var line in lineRenderers)
             {
+                //设置line的缩放和进行uv偏移
                 line.SetPosition(1, new Vector3(0, 0, nowRayLength));
                 line.material.SetTextureScale("_MainTex", new Vector2(nowRayLength * (lineScale / 10f), 1f));
                 line.material.SetTextureOffset("_MainTex", new Vector2(Time.time * uvSpeed, 0f));
             }
-
-            nowLifeTime += time;
         }
 
         private void FixedUpdate()

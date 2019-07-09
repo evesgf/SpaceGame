@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
+  - component: {fileID: 7232934753305997730}
+  - component: {fileID: 3072542198164991212}
   m_Layer: 0
   m_Name: CFXM4 Wave Explosion_Red
   m_TagString: FxTemporaire
@@ -4617,6 +4619,38 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7232934753305997730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4432c4dc22426e243830ff69a70f1547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: 
+  desSpawnDelay: 1
+--- !u!114 &3072542198164991212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a19912c0669ab40862bfd69e4cd133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomScale: 1
+  RandomRotation: 1
+  MinScale: 1
+  MaxScale: 2
+  MinRotation: -360
+  MaxRotaion: 360
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

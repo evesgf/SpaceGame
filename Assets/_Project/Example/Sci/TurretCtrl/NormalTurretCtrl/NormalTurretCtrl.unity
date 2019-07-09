@@ -2305,11 +2305,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalTurretCtrl_LightningGun
       objectReference: {fileID: 0}
-    - target: {fileID: 7326158855179646873, guid: cf15b55fc061f334caf3b733b407dda1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7434980264550397112, guid: cf15b55fc061f334caf3b733b407dda1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2374,12 +2369,17 @@ PrefabInstance:
         type: 3}
       propertyPath: txtAngle
       value: 
-      objectReference: {fileID: 1710793988}
+      objectReference: {fileID: 1818326844}
     - target: {fileID: 2800664880342719815, guid: cf15b55fc061f334caf3b733b407dda1,
         type: 3}
       propertyPath: pointLine
       value: 
       objectReference: {fileID: 665807303}
+    - target: {fileID: 3533653649182007871, guid: cf15b55fc061f334caf3b733b407dda1,
+        type: 3}
+      propertyPath: endDelay
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf15b55fc061f334caf3b733b407dda1, type: 3}
 --- !u!4 &5308370747073092130 stripped

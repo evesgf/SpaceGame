@@ -54,18 +54,10 @@ namespace GPL
             var z = 0f;
             if (targetDistance > stopDistance)
             {
-                if (targetPlaneDistance > Mathf.Abs(targetHightDistance))
-                {
-                    //前进
-                    z = 1;
-                    y = 0;
-                }
-                else
-                {
-                    //上升
-                    y = Mathf.Sign(targetHightDistance);
-                    z = 0;
-                }
+                var t = targetPlaneDistance / targetHightDistance;
+                z = targetPlaneDistance/(targetPlaneDistance+ targetHightDistance);
+                y = 1-targetHightDistance / (targetPlaneDistance + targetHightDistance);
+                if (targetHightDistance < 0) y = -y;
             }
             else
             {

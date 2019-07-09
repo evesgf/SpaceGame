@@ -6,10 +6,9 @@ namespace GPL
 {
     public class GPLMissileLauncher : MonoBehaviour
     {
-        public Transform missilePrefab;
-        public Transform muzzlePos;
         public Transform target;
-        public MissileBase.MissileType missileType;
+        public FireBase[] fires;
+        public NormalTurretCtrl[] normalTurretCtrls;
 
         // Start is called before the first frame update
         void Start()
@@ -19,28 +18,19 @@ namespace GPL
         // Update is called once per frame
         void Update()
         {
+            foreach (var t in normalTurretCtrls)
+            {
+                t.target = target.position;
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(CreateMissileList());
+                foreach (var f in fires)
+                {
+                    f.target = target;
+                    f.OnFire();
+                }
             }
-        }
-
-        IEnumerator CreateMissileList()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                CreateMissile();
-                yield return new WaitForSeconds(0.2f);
-            }
-        }
-
-        private void CreateMissile()
-        {
-            var m = Instantiate(missilePrefab, muzzlePos.position, muzzlePos.rotation);
-            var mBase = m.GetComponent<MissileBase>();
-            mBase.Init();
-            if (target != null) mBase.target = target;
-            mBase.missileType = missileType;
         }
     }
 }

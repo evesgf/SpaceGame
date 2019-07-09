@@ -54,6 +54,9 @@ MonoBehaviour:
     m_Bits: 4294967295
   lifeTime: 10
   flySpeed: 20
+  addExplosionForce: 1
+  explosionForceRadius: 10
+  explosionForce: 200
 --- !u!114 &7100262841198240060
 MonoBehaviour:
   m_ObjectHideFlags: 0

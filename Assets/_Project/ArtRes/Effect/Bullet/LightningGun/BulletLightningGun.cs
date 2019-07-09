@@ -45,7 +45,7 @@ namespace GPL
                 line.SetPosition(1, new Vector3(0, 0, 0));
                 var color = line.material.GetColor("_TintColor");
                 color.a = 1;
-            line.material.SetColor("_TintColor", color);
+                line.material.SetColor("_TintColor", color);
             }
             flare.localPosition = Vector3.zero;
 

@@ -163,6 +163,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7849908782367799070}
     m_Modifications:
+    - target: {fileID: 224030009425218930, guid: af5e8672302f39d44857b53b30a1e06f,
+        type: 3}
+      propertyPath: m_Name
+      value: Turret Electric
+      objectReference: {fileID: 0}
     - target: {fileID: 222455836783397186, guid: af5e8672302f39d44857b53b30a1e06f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,11 +238,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224030009425218930, guid: af5e8672302f39d44857b53b30a1e06f,
-        type: 3}
-      propertyPath: m_Name
-      value: Turret Electric
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af5e8672302f39d44857b53b30a1e06f, type: 3}
 --- !u!4 &1461958624639976104 stripped
@@ -265,6 +265,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8870862747931323065}
     m_Modifications:
+    - target: {fileID: 100002, guid: 87dfadbc7560e314b84b3a056ac55b3d, type: 3}
+      propertyPath: m_Name
+      value: lightning_gun_beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 87dfadbc7560e314b84b3a056ac55b3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8130604679252748273, guid: 87dfadbc7560e314b84b3a056ac55b3d,
         type: 3}
       propertyPath: fireLightningGun
@@ -313,10 +321,6 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 87dfadbc7560e314b84b3a056ac55b3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 87dfadbc7560e314b84b3a056ac55b3d, type: 3}
-      propertyPath: m_Name
-      value: lightning_gun_beam
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87dfadbc7560e314b84b3a056ac55b3d, type: 3}

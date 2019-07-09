@@ -13874,7 +13874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolName: 
-  desSpawnDelay: 0.5
+  desSpawnDelay: 1
 --- !u!1 &2095938778109139243
 GameObject:
   m_ObjectHideFlags: 0

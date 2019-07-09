@@ -44,7 +44,7 @@ namespace GPL
 
                 //斜边长度
                 hypotenuse = Mathf.Sqrt(Mathf.Pow(x, 2f) + Mathf.Pow(y, 2f));
-                pointLine.rectTransform.sizeDelta = new Vector2(hypotenuse*0.5f, pointLine.rectTransform.sizeDelta.y);
+                pointLine.rectTransform.sizeDelta = new Vector2(hypotenuse, pointLine.rectTransform.sizeDelta.y);
 
                 //求出弧度
                 float cos = x / hypotenuse;
