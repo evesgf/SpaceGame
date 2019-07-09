@@ -1829,6 +1829,31 @@ PrefabInstance:
       propertyPath: txtAngle
       value: 
       objectReference: {fileID: 1818326844}
+    - target: {fileID: 6765197031714914569, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765197031714914569, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765197031714914569, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765197031714914569, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765197031714914569, guid: f3e3c9a775bc4d14a9639f61ca2eb21f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e3c9a775bc4d14a9639f61ca2eb21f, type: 3}
 --- !u!114 &8011327492583905952 stripped

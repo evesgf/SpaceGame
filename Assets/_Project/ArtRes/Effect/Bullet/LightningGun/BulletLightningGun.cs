@@ -12,6 +12,7 @@ namespace GPL
         public float lifeTime = 5f;
         public float flySpeed = 100f;
         public float radius = 1.5f;
+        public float endDelay = 0.5f;
 
         public Transform flare;                     //末端效果
         public Transform muzzle;                    //炮口效果
@@ -26,6 +27,7 @@ namespace GPL
 
         private AudioSource audioSource;
         private Vector3 oldPos;
+        private bool isEnd;
 
         private void Awake()
         {
@@ -41,13 +43,18 @@ namespace GPL
             foreach (var line in lineRenderers)
             {
                 line.SetPosition(1, new Vector3(0, 0, 0));
+                var color = line.material.GetColor("_TintColor");
+                color.a = 1;
+            line.material.SetColor("_TintColor", color);
             }
             flare.localPosition = Vector3.zero;
+
+            isEnd = false;
         }
 
         public override void OnEnd()
         {
-            gameObject.SetActive(false);
+            isEnd = true;
 
             //生成收枪音效
             PoolManager.Instance.GetPool(FireLightningGun.POOLNAME_BOOMAUDIO).Spawn((PoolObject po) => {
@@ -55,6 +62,24 @@ namespace GPL
                 po.OnDesSpawned();
             });
 
+            StartCoroutine(EndDelay());
+        }
+
+        IEnumerator EndDelay()
+        {
+            for (float i = 0; i < endDelay; i+=Time.deltaTime)
+            {
+                foreach (var line in lineRenderers)
+                {
+                    var color = line.material.GetColor("_TintColor");
+                    color.a = 1-i / endDelay;
+                    line.material.SetColor("_TintColor", color);
+                }
+
+                yield return i;
+            }
+
+            gameObject.SetActive(false);
             fireLightningGun.OnEndFire();
         }
 
@@ -77,6 +102,14 @@ namespace GPL
                 OnEnd();
             }
 
+            oldPos = flare.position;
+            nowLifeTime += time;
+        }
+
+        private void FixedUpdate()
+        {
+            if(!isEnd) OnFly(Time.fixedDeltaTime);
+
             //计算lineRenderers长度
             length = flare.localPosition.z;
             foreach (var line in lineRenderers)
@@ -85,14 +118,6 @@ namespace GPL
                 line.material.SetTextureScale("_MainTex", new Vector2(length * (lineScale / 10f), 1f));
                 line.material.SetTextureOffset("_MainTex", new Vector2(Time.time * uvSpeed, 0f));
             }
-
-            oldPos = flare.position;
-            nowLifeTime += time;
-        }
-
-        private void FixedUpdate()
-        {
-            OnFly(Time.fixedDeltaTime);
         }
     }
 }

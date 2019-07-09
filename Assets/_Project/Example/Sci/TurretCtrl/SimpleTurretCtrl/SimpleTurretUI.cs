@@ -24,7 +24,7 @@ namespace GPL
             txtAngle.text = simpleTurretCtrl.GetAngleToTarget().ToString("f2");
 
             //显示炮管真实指向
-            var screenPos = simpleTurretCtrl.GetTargetDistance();
+            var screenPos = Camera.main.WorldToScreenPoint(simpleTurretCtrl.RealTargetPos);
             realTargetIcon.position = new Vector3(screenPos.x, screenPos.y, 0);
         }
     }

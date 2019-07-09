@@ -17,7 +17,14 @@ namespace GPL
 
         public Transform muzzle;                //枪口位置
 
+        /// <summary>
+        /// 返回炮口真实指向
+        /// </summary>
+        public Vector3 RealTargetPos { get; private set; }
+
         internal Vector3 target;
+
+        private RaycastHit hit;
 
         // Start is called before the first frame update
         void Start()
@@ -29,7 +36,9 @@ namespace GPL
         void Update()
         {
             Rotate(target);
-            
+
+            //检测炮管真实指向位置
+            RealTargetPos = Physics.Raycast(muzzle.position, muzzle.forward, out hit, Camera.main.farClipPlane) ? RealTargetPos = hit.point : RealTargetPos = muzzle.forward * Camera.main.farClipPlane;
         }
 
         /// <summary>
@@ -61,15 +70,6 @@ namespace GPL
         public float GetAngleToTarget()
         {
             return Vector3.Angle(barrel.forward, target - barrel.position);
-        }
-
-        /// <summary>
-        /// 返回枪口指向在屏幕的坐标
-        /// </summary>
-        /// <returns></returns>
-        public Vector3 GetTargetDistance()
-        {
-            return Camera.main.WorldToScreenPoint(muzzle.position + muzzle.forward * Vector3.Distance(barrel.position, target));
         }
 
         private void OnDrawGizmos()
